@@ -45,19 +45,22 @@
                 <div class="col-12 col-sm align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
+                <div class="col-12 col-sm align-self-center">
+					<a class="btn btn-warning btn-sm" href="#formReservation" role="button">Reserve Table</a>
+                </div>
+				
             </div>
         </div>
     </header>
 
     <div class="container">
+	
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
             </div>
             <div class="col col-sm col-md">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                            src="img/uthappizza.png" alt="Uthappizza">
                     <div class="media-body">
                         <h2 class="mt-0">Uthappizza
 							<span class="badge badge-danger">HOT</span>
@@ -68,18 +71,26 @@
                             cherry tomatoes, Vidalia onion, Guntur chillies and
                             Buffalo Paneer.</p>
                     </div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"      src="img/uthappizza.png" alt="Uthappizza">
                 </div>
             </div>
-        </div>
-
+        </div>	
 
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
             <div class="col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+				<div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet
+							<span class="badge badge-danger">NEW</span>
+						</h2>
+						<p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail align-self-left" src="img/buffet.png" alt="buffet">
+                </div>
+				
             </div>
         </div>
 
@@ -104,11 +115,11 @@
             </div>
         </div>
     
-		<div class="row row-content">		
-            <div class="col-12 col-sm-6">
+		<div class="row row-content" id="formReservation">		
+            <div class="col-12 offset-sm-2 col-sm-8">
                 <div class="card">
                     <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div >
+                   
 					<form class="card-body">
 						<div class="form-group row">
 							<label for="nbGuest" class="col-12 col-md-3 col-form-label">Number of guests</label>
@@ -123,11 +134,11 @@
 						</div>
 						<div class="form-group row">
 							<label for="udate" class="col-12 col-md-4 col-form-label">Date and Time</label>
-							<div class="col-5 col-md-4">
-								<input type="date" name="udate" class="form-control" id="udate" placeholder="20/05/2019" value="20/05/2019" required>
+							<div class="col-12 col-md-4">
+								<input type="text" name="udate" class="form-control" id="udate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
 							</div>
-							<div class="col-5 col-md-4">
-								<input type="time" name="utime" class="form-control" id="utime" placeholder="12:15" required>
+							<div class="col-12 col-md-4">
+								<input type="text" name="utime" class="form-control" id="udtime" placeholder="Time" onfocus="(this.type='time')" onblur="if(this.value==''){this.type='text'}" required>
 							</div>
 						</div>
 						
@@ -137,30 +148,7 @@
 							</div>
 						</div>					
 					</form>
-					 <form action="/action_page.php" autocomplete="on">
-						Last name: <input type="text" name="lname"><br>
-						E-mail: <input type="email" name="email" autocomplete="off"><br>
-						  
-						<p>Please select your gender:</p>
-						  <input type="radio" name="gender" value="male"> Male
-						  <input type="radio" name="gender" value="other"> Other<br>  
-						 <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> 
-						<p>Please select your age:</p>
-						  <input type="radio" name="age" value="30"> 0 - 30
-						  <input type="radio" name="age" value="60" checked> 31 - 60
-						  <input type="radio" name="age" value="100"> 61 - 100  
-
-						<br>
-						  <input type="time" name="time" placeholder="12:15" >
-						  <input type="date" name="date" value="2019-05-20" min="1979-12-31">
-						  Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
-						  <input type="color" value="color">  
-						  <input type="range" value="range">  
-						  <input type="search" value="search">  
-						  
-						  <input type="submit" value="Submit">
-					</form>
-                    </div>
+					
                 </div>
             </div>		      
 			 
