@@ -104,6 +104,73 @@
             </div>
         </div>
     
+		<div class="row row-content">		
+            <div class="col-12 col-sm-6">
+                <div class="card">
+                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+                    <div >
+					<form class="card-body">
+						<div class="form-group row">
+							<label for="nbGuest" class="col-12 col-md-3 col-form-label">Number of guests</label>
+							<div class="col-5 col-md-7">
+								<input type="radio" class="form-contro" name="nbGuest" id="nbGuest" value="1">1 
+								<input type="radio" class="form-contro" name="nbGuest" value="2">2
+								<input type="radio" class="form-contro" name="nbGuest" value="3" checked>3 
+								<input type="radio" class="form-contro" name="nbGuest" value="4">4 
+								<input type="radio" class="form-contro" name="nbGuest" value="5">5
+								<input type="radio" class="form-contro" name="nbGuest" value="6">6
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="udate" class="col-12 col-md-4 col-form-label">Date and Time</label>
+							<div class="col-5 col-md-4">
+								<input type="date" name="udate" class="form-control" id="udate" placeholder="20/05/2019" value="20/05/2019" required>
+							</div>
+							<div class="col-5 col-md-4">
+								<input type="time" name="utime" class="form-control" id="utime" placeholder="12:15" required>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<div class="offset-md-2 col-md-10">
+								<button type="submit" class="btn btn-primary">Reserve</button>
+							</div>
+						</div>					
+					</form>
+					 <form action="/action_page.php" autocomplete="on">
+						First name:<input type="text" name="fname"><br>
+						Last name: <input type="text" name="lname"><br>
+						E-mail: <input type="email" name="email" autocomplete="off"><br>
+						  
+						<p>Please select your gender:</p>
+						  <input type="radio" name="gender" value="male"> Male
+						  <input type="radio" name="gender" value="female"> Female
+						  <input type="radio" name="gender" value="other"> Other<br>  
+						 <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> 
+						<p>Please select your age:</p>
+						  <input type="radio" name="age" value="30"> 0 - 30
+						  <input type="radio" name="age" value="60" checked> 31 - 60
+						  <input type="radio" name="age" value="100"> 61 - 100  
+
+						<br>
+						  <input type="time" name="time" placeholder="12:15" >
+						  <input type="date" name="date" value="2019-05-20" min="1979-12-31">
+						  Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+						  <input type="color" value="color">  
+						  <input type="range" value="range">  
+						  <input type="search" value="search">  
+						  
+						  
+						  
+						  <input type="submit" value="Submit">
+					</form>
+                    </div>
+                </div>
+            </div>		      
+			 
+       </div>
+	
+	
 	</div>
 
     <footer class="jumbotron footer">
