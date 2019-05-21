@@ -77,6 +77,8 @@
             </div>
         </div>
     </div>
+
+	
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -88,16 +90,67 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-					<a class="btn btn-warning btn-sm btn-block" href="#formReservation" 
-					data-toggle="tooltip" data-html="true"  
-					title="Or Call us at  <br><strong>+852 12345678</strong>"
-                    data-placement="bottom"
+					<a class="btn btn-warning btn-sm btn-block" 
+					data-toggle="modal" data-target="#ReserveModal"
 					role="button">Reserve Table</a>
                 </div>
 				
             </div>
         </div>
     </header>
+
+	<div id="ReserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+					<form>
+						<div class="orm-row form-group row">
+							<label for="nbGuest" class="col-12 col-md-3 col-form-label">Number of guests</label>
+							<div class="col-5 col-md-7">
+								<input type="radio" class="form-contro" name="nbGuest" id="nbGuest" value="1">1 
+								<input type="radio" class="form-contro" name="nbGuest" value="2">2
+								<input type="radio" class="form-contro" name="nbGuest" value="3" checked>3 
+								<input type="radio" class="form-contro" name="nbGuest" value="4">4 
+								<input type="radio" class="form-contro" name="nbGuest" value="5">5
+								<input type="radio" class="form-contro" name="nbGuest" value="6">6
+							</div>
+						</div>
+						<div class="orm-row form-group row">
+							<label for="udate" class="col-12 col-md-4 col-form-label">Date and Time</label>
+							<div class="col-12 col-md-4">
+								<input type="text" name="udate" class="form-control" id="udate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
+							</div>
+							<div class="col-12 col-md-4">
+								<input type="text" name="utime" class="form-control" id="udtime" placeholder="Time" onfocus="(this.type='time')" onblur="if(this.value==''){this.type='text'}" required>
+							</div>
+						</div>
+						<div class="orm-row form-group row">
+							<label for="udate" class="col-12 col-md-4 col-form-label">Section </label>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							  <label class="btn btn-success active">
+								<input type="radio" name="options" id="NonSmoking" autocomplete="off" checked> Non-smoking
+							  </label>
+							  <label class="btn btn-danger">
+								<input type="radio" name="options" id="Smoking" autocomplete="off"> Smoking
+							  </label>
+							</div>
+						</div>
+						
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>        
+                        </div>
+						
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
        <div class="row row-content">
@@ -144,7 +197,7 @@
 									International experience having worked closely with
 									whos-who in the culinary world, he specializes in
 									creating mouthwatering Indo-Italian fusion experiences.
-									</p>
+									</p> 
                             </div>
                         </div>
 					</div>
@@ -310,8 +363,8 @@
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip(); // permet d'activer la mise en forme info bulle
-			
+           // $('[data-toggle="tooltip"]').tooltip(); // permet d'activer la mise en forme info bulle
+			//
         });
     </script>
 	
