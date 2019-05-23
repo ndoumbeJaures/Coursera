@@ -76,4 +76,17 @@ body{
     position: absolute;
     bottom: 0px;
 }	
-
+// fddddddddddddddddddddddddddddddddddddddddddd
+.modal-header
+{
+    background:$background-dark;
+	color: floralwhite;
+    .close
+	{
+		color: floralwhite;
+    }
+}
+.modal-body
+{
+    background: $background-pale;
+}
