@@ -9,15 +9,15 @@
     "lite": "lite-server",
     "scss": "node-sass -o css/ css/",
     "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
-	"start": "npm run watch:all"
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0",
     "onchange": "^3.3.0",
-    "parallelshell": "^3.0.2"
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
