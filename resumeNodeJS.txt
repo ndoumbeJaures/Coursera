@@ -1,0 +1,41 @@
+########################################################################"			
+	Downloading and Installing NodeJS
+https://nodejs.org
+Install and add to the enviroment path : E:\Program Files\nodejs
+node --version
+cd C:\FullStackDev\1\git-test
+npm init
+	This should Installing an NPM Module and create a package.json file in your git-test folder
+	Ensuite il faut repondre aux questions
+
+npm install lite-server --save-dev
+	pour installation facultative d'un serveur pour visualisation temp réel des modification du projet
+npm install lite-server --save
+	pour installation obligatoire d'un serveur de visualisation temp réel du projet
+	le kit est installé et la dépendance au projet enregistrer dans le json
+	l'installation d'un outils entraine l'installation de toute ses dépendances
+
+	npm start
+start the development server
+If you now open the index.html page in an editor and make changes and save, the browser should immediately refresh to reflect the changes.
+"start" : "npm run lite",
+"test": "echo jklkjkl",
+"lite" : "lite-server"
+	Ces ajout permet à la simple commande start de démararer aussi le lite-serve
+
+####la sauvegarde en ligne  depository est automatique en plus du rendu temp réel
+pour marquer les fichiers à ne pas mettre à jour dans les sauvegarde e n ligne 
+on créer un fichier à la racine du dossier de nom : ".gitignore"
+	on peut y ajouter "node_modules" pour signifier que les modules node
+
+
+
+
+
+
+
+
+
+
+
+

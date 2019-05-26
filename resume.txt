@@ -1,0 +1,246 @@
+
+########################################################################"
+
+le fichier contient par défaut les fichiers: index.html et package.json
+npm install : pour lancer l'installation des modules de dépendance du projet
+.gitignore : node_modules
+git init
+git status
+git add .
+git commit -m "Initialisation et d'instalation"
+npm install bootstrap@4.0.0 --save
+npm install jquery@3.3.1 popper.js@1.12.9 --save
+
+	<!-- Required meta tags always come first -->
+    
+	<meta charset="utf-8">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    
+	<!-- Bootstrap CSS -->
+    
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+########################################################################################
+
+#
+ <div class="container">
+	 <div class="row">
+		 <div class="col-..."> col- = col-xs  et pour le reste on a sm md lg xl
+			 <div class="row">
+				 <div class="col-...">
+#
+	order-sm-last : pour dire que sur les ecran sm il s'affiche sur les dernières colonne de la ligne
+	order-sm-first :...	
+	align-items-center : pour centrer verticalement les éléments d'une ligne dans sa hauteur
+	justify-content-center : aligner horizontal donc marges automatique
+	col-auto : pour largeur colone aléatoire sur le reste laisser par les autres elements
+	col : pour largeur auto/reste sur xs
+	col-sm : pour largeur auto/reste sur sm
+	offset-sm-1 : sauter une colonne sur les écran sm
+
+###########################################################
+d-none and d-sm-block
+.d-{breakpoint}-{value} none inline inline-block block table table-cell table-row flex inline-flex
+
+https://getbootstrap.com/docs/4.3/utilities/display/
+.d-{sm,md,lg,xl}-none
+ 
+Breadcrumb Navigation : c'est la class pour indiquer le niveau dans l'arborescence
+
+nav-tabs : correspond au onglets qui déroule le contenu selectionné/indexé
+nav-pills : une sorte de nav-tabs ou les onglets sont surlignés et non enfoncés
+
+Collapse : représente 2 états (hide or show) appliqué à un élément
+Accordion :  cache un contenu et en dévoile un autre au même moment selon indexé
+Tooltips : info bulle d'explications
+Popovers : Info bulle plus grand et structure(titre, contenu) apparai au click
+Modal : fenetre de dialogue modale ou pas
+Carousel : annimations/défillement d'images
+ Un élément ne peut contenir simultanément un Modal et unTooltips
+
+###########################################################
+		JS
+Chaque composant boostrap :
+	a ses fonctions/methodes/callback et signaux/évènements
+	des attributs
+	peut être modifier manuellement en JQuerry ou en boostrap via data-*
+
+##########################################################
+	LESS and SASS/SCSS
+il s'agit de language de compilation en css permettant l'utilisation des : variables, fonctions, expressions,...
+Le reste du code etant simplement du css
+#
+Tout commence par la saisie d'un code en LESS que l'on enregistre style.less par exemple
+	Ensuite on installe via la cmd :  npm install -g less@2.7.2
+	on part dans le dossier css : cd css
+	On génere notre code css via la cmd: lessc styles.less styles.css
+#
+Tout commence par la saisie d'un code en SCSS que l'on enregistre style.scss par exemple
+	Ensuite on installe via la cmd :   npm install --save-dev node-sass@4.12.0
+	open your package.json file and add the following line into the scripts object there
+		    //après la ligne "lite": "lite-server"
+	 
+		     "scss": "node-sass -o css/ css/"
+	On génere notre code css via la cmd: npm run scss
+	on ne peut modifier le package.json que lorsque l'installation est terminé
+
+
+Variables
+	Less : 	@maVariable: val;
+	Scss : $maVariable: val*2;// on  peut éffectuer des opérations sur des nombres
+
+Mixin : c'est en ensemble d'instructions/une fonction
+  Less : 
+	.zero-margin
+	{
+	margin: 0px;
+	background: @white; // appel d'une variable white déclaré plus haut
+	}
+	.row-header
+	{
+	.zero-margin;
+	padding: 0px auto; // appel d'une variable white déclaré plus haut
+	}
+
+  Scss : 
+	@mixin zero-margin
+	{
+	margin: 0px;
+	background: $white; // appel d'une variable white déclaré plus haut
+	}
+	.row-header
+	{
+	@include zero-margin;// appel de la fonction
+	padding: 0px auto; // appel d'une variable white déclaré plus haut
+	}	
+
+Functions : math, list, string, color, color-operations, ...
+toute ces fonctions par defaut peuvent être inclut via : @import "foo" dans SASS
+
+
+
+###########################################################"
+		Le déploiment  du site sur internet
+
+	NPM Scripts : property in package.json
+there is lot of repetive task you have to automati in your deployment like :
+
+compiling SASS or LESS int CSS
+Minification : removing unnecessary characters, spaces, newlines, comments,...
+Concatenation: il s'agi de réunir les fichiers du même type inclu dans notre page en un seul fichier .js et .css
+Rechecking for errors: vérifier que le code fonction correctement apres ces opérations
+
+Images : optimisation par réduction de la taille sans perte de qualité
+watch : exécution d'un tâche lorsqu'un fichier a été modifier par exemple	
+Server and livereload : visualisation instantané de l'évolution des modification
+Building your site for deployment : produire le fichier à hénerger
+
+On déplace par exemple notre script dans un fichier externe
+	<script src="js/scripts.js"></script>
+On installe l'élément permetant l'éxécution des tâches en parrallèle
+	npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
+
+Watch for changes to the styles.scss file and automatically compile it to the css file.
+Pour cela on ajoute au package.json l'une des commandes suivantes avec virgule
+    Linux : "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+
+	    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+
+    Windows : "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    
+	       "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+
+
+    "start": "npm run watch:all",
+
+	npm start
+	npm run scss
+
+//////////////////////////////////////////////////////
+
+npm install --save-dev rimraf@2.6.2
+
+
+ "clean": "rimraf dist",
+
+
+npm -g install copyfiles@2.0.0
+
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+
+
+npm -g install imagemin-cli@3.0.0
+
+
+sudo npm install -g imagemin-cli@3.0.0 --unsafe-perm=true --allow-root
+
+
+    "imagemin": "imagemin img/* -o dist/img",
+
+node_modules
+dist
+
+npm install --save-dev usemin-cli@0.5.1 cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7
+
+
+    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    
+	"build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
+
+
+    <!-- build:css css/main.css -->
+    
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    
+<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+   
+<link href="css/styles.css" rel="stylesheet">
+   
+    <!-- endbuild -->
+
+
+	<!-- build:js js/main.js -->
+    
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+<script src="js/scripts.js"></script>
+    
+	<!-- endbuild -->
+
+
+npm run build
+
+
+
+
+
+
+
+
+@@NDnd##/\##2323@@
+##NDnd@@/\@@2323##
+
+
+
+
+
+
